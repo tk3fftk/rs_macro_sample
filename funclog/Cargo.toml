@@ -1,11 +1,13 @@
+[lib]
+proc-macro = true
+
 [package]
-name = "rs_macro_sample"
+name = "funclog"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-tomlstruct = {path = "./tomlstruct"}
-typename = {path = "./typename"}
-funclog = {path = "./funclog"}
+quote = "1.0.23"
+syn = {version= "1.0.109", features = ["full"]}

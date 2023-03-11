@@ -1,3 +1,4 @@
+use funclog::funclog;
 use tomlstruct::tomlstruct;
 use typename::{TypeName, TypeNameTrait};
 
@@ -10,6 +11,11 @@ tomlstruct! {
 #[derive(TypeName)]
 struct Hello2;
 
+#[funclog]
+fn hello() {
+    println!("hello");
+}
+
 fn main() {
     let _ = Hello {
         name: String::from("hello"),
@@ -18,4 +24,6 @@ fn main() {
 
     let x = Hello2;
     dbg!(x.type_name());
+
+    hello();
 }
